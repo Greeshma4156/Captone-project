@@ -1,0 +1,128 @@
+### User Register
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "firstName":"Anurag",
+    "lastName":"User",
+    "email":"anurag.user@example.com",
+    "password":"User@1234",
+    "profileImageUrl":"https://example.com/avatars/user.png"
+}
+
+### User Login
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email":"anurag.user@example.com",
+    "password":"User@1234"
+}
+
+###Read article (User)
+GET http://localhost:4000/user-api/articles
+
+
+###Add comments to the articles
+POST  http://localhost:4000/user-api/articles/6989ee8410aeb9ac738affb6
+Content-Type: application/json
+
+{
+    "comment":"this is the comment"
+}
+
+
+
+
+
+
+
+
+
+### Author Login
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email":"anurag.author@example.com",
+    "password":"author@1234"
+}
+
+
+
+
+
+
+### Create article(AUTHOR)
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "author":"69898cc99e625dc42f0d4855",
+    "title":"test1 article",
+    "category":"programmming",
+    "content":"content of test1 article"
+}
+
+### Read article(AUTHOR)
+GET http://localhost:4000/author-api/articles/69898cc99e625dc42f0d4855
+
+
+
+### Update article (AUTHOR)
+PUT http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "author":"69898cc99e625dc42f0d4855",
+    "articleId":"6989ee8410aeb9ac738affb6",
+    "title":"test2 article",
+    "category":"programmming",
+    "content":"content of test2 article"
+}
+
+###delete article [AUTHOR]
+PUT http://localhost:4000/author-api/articles/6989ee8410aeb9ac738affb6
+
+
+###logout
+GET http://localhost:4000/common-api/logout
+
+
+
+
+
+###authenticate admin
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email":"raj.admin@example.com",
+    "password":"Admin@1234"
+}
+
+
+###read articles [ADMIN]
+GET http://localhost:4000/admin-api/articles
+
+
+###Block Users [ADMIN]
+PUT http://localhost:4000/admin-api/block/69898cc99e625dc42f0d4855
+
+###UnBlock Users [ADMIN]
+PUT http://localhost:4000/admin-api/Unblock/69898cc99e625dc42f0d4855
+
+
+###Change Password
+PUT http://localhost:4000/common-api/change-password
+Content-Type: application/json
+
+{
+    "email":"anurag.author@example.com",
+    "currentPassword":"author@1234",
+    "newPassword":""
+}
+
+
+###TEST request
+GET http://localhost:4000/test
