@@ -24,5 +24,5 @@
 
 ### Registration and login
 
-10. Registration & login in common for user and author. Create a seperate 
+10. Registration & login in common for user and author. Create a seperate service to reuse
 
